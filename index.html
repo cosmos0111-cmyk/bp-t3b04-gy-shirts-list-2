@@ -1,213 +1,648 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>영화 미학 지식 저널 및 아카이브</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --cream-bg: #fdfdfa;
-      --charcoal-fg: #1c1a17;
-      --gold-accent: #c29d6d;
-      --hairline-color: #e6e3db;
-      --serif-font: 'Nanum Myeongjo', serif;
-      --sans-font: 'Outfit', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가양 셔츠룸 모음 - 프리미엄 셔츠룸 정보 | 홈</title>
+    <meta name="description" content="가양 셔츠룸 모음에서 엄선된 프리미엄 셔츠룸 정보를 확인하세요. 예약 010-6279-0862. 가양 셔츠룸 추천, 가격, 후기까지 한눈에 비교.">
+    <meta name="keywords" content="가양 셔츠룸, 가양 셔츠룸 모음, 가양 셔츠룸 추천, 가양 셔츠룸 가격, 가양 셔츠룸 후기, 가양 셔츠룸 예약">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <link rel="canonical" href="https://t3b04-gy-shirts-list-2.vercel.app/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="가양 셔츠룸 모음 - 엄선된 프리미엄 정보">
+    <meta property="og:description" content="가양 셔츠룸 모음. 전문가가 엄선한 프리미엄 셔츠룸 정보와 실제 후기를 제공합니다. 예약 010-6279-0862.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://t3b04-gy-shirts-list-2.vercel.app/">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="가양 셔츠룸 모음">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="가양 셔츠룸 모음 - 프리미엄 셔츠룸 정보">
+    <meta name="twitter:description" content="가양 셔츠룸 모음. 전문가가 엄선한 프리미엄 셔츠룸 정보와 실제 후기를 제공합니다. 예약 010-6279-0862.">
+    
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "가양 셔츠룸 모음",
+        "description": "가양 지역 프리미엄 셔츠룸 정보 제공 및 예약 플랫폼",
+        "url": "https://t3b04-gy-shirts-list-2.vercel.app/",
+        "telephone": "+82-10-6279-0862",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "서울",
+            "addressRegion": "강서구",
+            "addressCountry": "KR"
+        },
+        "areaServed": "가양동",
+        "priceRange": "₩₩₩"
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--cream-bg);
-      color: var(--charcoal-fg);
-      font-family: var(--sans-font);
-      line-height: 1.8;
-      padding: 0 40px;
-    }
-    .wrapper {
-      max-width: 960px;
-      margin: 0 auto;
-      padding: 80px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 32px;
-      margin-bottom: 60px;
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-    }
-    .brand {
-      font-family: var(--serif-font);
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      letter-spacing: 0.05em;
-    }
-    nav { display: flex; gap: 32px; }
-    nav a {
-      color: var(--charcoal-fg);
-      text-decoration: none;
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      transition: color 0.3s ease;
-    }
-    nav a:hover { color: var(--gold-accent); }
-    main { padding-bottom: 80px; }
-    .kicker {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: var(--gold-accent);
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-family: var(--serif-font);
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.35;
-      letter-spacing: -0.02em;
-      color: var(--charcoal-fg);
-      margin-bottom: 40px;
-    }
-    .story-body {
-      font-family: var(--serif-font);
-      font-size: 1.15rem;
-      color: var(--charcoal-fg);
-      font-weight: 400;
-      text-align: justify;
-      margin-bottom: 60px;
-    }
-    .story-body p { margin-bottom: 24px; text-indent: 12px; }
-    .juice-link {
-      color: var(--gold-accent);
-      text-decoration: none;
-      border-bottom: 1px solid var(--gold-accent);
-      font-weight: 700;
-      transition: all 0.3s ease;
-    }
-    .juice-link:hover {
-      color: var(--charcoal-fg);
-      border-bottom-color: var(--charcoal-fg);
-    }
-    .editorials {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 60px;
-    }
-    .editorial-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.15em;
-      color: var(--gold-accent);
-      margin-bottom: 40px;
-    }
-    .editorial-flow {
-      display: flex;
-      flex-direction: column;
-      gap: 40px;
-    }
-    .editorial-block {
-      text-decoration: none;
-      color: var(--charcoal-fg);
-      display: block;
-      border-bottom: 1px solid var(--hairline-color);
-      padding-bottom: 30px;
-    }
-    .editorial-block:hover h3 { color: var(--gold-accent); }
-    .editorial-block h3 {
-      font-family: var(--serif-font);
-      font-size: 1.4rem;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: color 0.3s ease;
-    }
-    .editorial-block p {
-      font-size: 0.95rem;
-      color: #555555;
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--hairline-color);
-      padding-top: 40px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      letter-spacing: 0.1em;
-      color: #888888;
-    }
-    footer a { color: #888888; text-decoration: none; }
-    footer a:hover { color: var(--gold-accent); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; gap: 16px; }
-      h1 { font-size: 2rem; }
-      .story-body { font-size: 1.05rem; }
-    }
-  </style>
+    </script>
+    
+    <style>
+        /* RESET & BASE */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { font-size: 16px; scroll-behavior: smooth; }
+        body {
+            font-family: 'Impact', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #000000;
+            color: #ffffff;
+            line-height: 1.3;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        a { color: #ff3b00; text-decoration: none; }
+        a:hover { color: #ffffff; background: #ff3b00; }
+        img, svg { display: block; max-width: 100%; }
+        
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 { font-family: 'Impact', system-ui, sans-serif; font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; }
+        h1 { font-size: clamp(3.2rem, 12vw, 6rem); line-height: 0.9; }
+        h2 { font-size: clamp(2.4rem, 8vw, 4rem); line-height: 1; }
+        h3 { font-size: 1.8rem; line-height: 1.1; }
+        p { font-family: system-ui, -apple-system, sans-serif; font-weight: 300; font-size: 1.1rem; line-height: 1.6; max-width: 70ch; }
+        
+        /* LAYOUT SPACE */
+        .gap { gap: 32px; }
+        .pad { padding: 48px; }
+        .section-gap { margin-bottom: 80px; }
+        
+        /* BRUTALIST ELEMENTS */
+        .brutal-border { border: 4px solid #ffffff; }
+        .brutal-border-accent { border: 4px solid #ff3b00; }
+        .brutal-skew { transform: skew(-2deg); }
+        .brutal-skew-rev { transform: skew(2deg); }
+        .brutal-bg-accent { background: #ff3b00; color: #000000; }
+        .brutal-bg-white { background: #ffffff; color: #000000; }
+        .brutal-bg-black { background: #000000; color: #ffffff; }
+        
+        /* RAW TEXTURE (pseudo) */
+        .texture-noise {
+            position: relative;
+        }
+        .texture-noise::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+        .texture-noise > * { position: relative; z-index: 1; }
+        
+        /* HEADER / NAV */
+        header {
+            padding: 24px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid #ff3b00;
+            background: #000000;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 2rem;
+            font-family: 'Impact', system-ui, sans-serif;
+            text-transform: uppercase;
+            color: #ffffff;
+            letter-spacing: 0.05em;
+            line-height: 1;
+        }
+        .logo span { color: #ff3b00; }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: #ffffff;
+            font-family: system-ui, sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            transition: 0.15s;
+        }
+        .nav-links a:hover {
+            border-color: #ff3b00;
+            background: transparent;
+            color: #ff3b00;
+        }
+        .nav-cta a {
+            background: #ff3b00;
+            color: #000000;
+            border: 2px solid #ff3b00;
+            font-weight: 700;
+        }
+        .nav-cta a:hover {
+            background: #ffffff;
+            border-color: #ffffff;
+            color: #000000;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+        .hamburger span {
+            display: block;
+            width: 32px;
+            height: 4px;
+            background: #ffffff;
+            transition: 0.2s;
+        }
+        #menu-toggle { display: none; }
+        
+        /* HERO */
+        .hero {
+            padding: 80px 48px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            min-height: 85vh;
+            border-bottom: 4px solid #ff3b00;
+            position: relative;
+        }
+        .hero-text {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+        .hero-text h1 {
+            margin-left: -8px;
+            text-shadow: 8px 8px 0 #ff3b00;
+        }
+        .hero-badge {
+            display: inline-block;
+            background: #ff3b00;
+            color: #000000;
+            padding: 8px 24px;
+            font-family: 'Impact', system-ui, sans-serif;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            transform: skew(-6deg);
+            border: 2px solid #ffffff;
+            width: fit-content;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 48px;
+            margin-top: 16px;
+        }
+        .hero-stat {
+            border-left: 4px solid #ff3b00;
+            padding-left: 16px;
+        }
+        .hero-stat strong {
+            font-size: 2.4rem;
+            font-family: 'Impact', system-ui, sans-serif;
+            display: block;
+            line-height: 1;
+        }
+        .hero-stat span {
+            font-family: system-ui, sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #aaaaaa;
+        }
+        .hero-visual {
+            background: #1a1a1a;
+            border: 4px solid #ffffff;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform: rotate(1deg);
+            overflow: hidden;
+        }
+        .hero-visual::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(255,59,0,0.08) 20px, rgba(255,59,0,0.08) 40px);
+        }
+        .hero-visual-inner {
+            font-size: 6rem;
+            line-height: 1;
+            z-index: 1;
+            text-align: center;
+            padding: 32px;
+        }
+        .hero-visual-inner span {
+            display: block;
+            font-family: 'Impact', system-ui, sans-serif;
+            color: #ff3b00;
+            text-shadow: 4px 4px 0 #ffffff;
+            font-size: 2rem;
+        }
+        
+        /* SECTION COMMON */
+        section {
+            padding: 80px 48px;
+        }
+        .section-label {
+            font-family: system-ui, sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: #ff3b00;
+            border-bottom: 2px solid #ff3b00;
+            display: inline-block;
+            padding-bottom: 4px;
+            margin-bottom: 48px;
+        }
+        .section-title {
+            font-size: clamp(2.8rem, 6vw, 4rem);
+            margin-bottom: 48px;
+            text-transform: uppercase;
+        }
+        
+        /* INFO GRID */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .info-card {
+            background: #111111;
+            border: 4px solid #ffffff;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+        }
+        .info-card:nth-child(odd) { transform: rotate(-0.5deg); }
+        .info-card:nth-child(even) { transform: rotate(0.5deg); }
+        .info-card h3 {
+            font-size: 1.6rem;
+            border-bottom: 2px solid #ff3b00;
+            padding-bottom: 8px;
+        }
+        .info-card .price {
+            font-family: 'Impact', system-ui, sans-serif;
+            font-size: 2rem;
+            color: #ff3b00;
+            line-height: 1;
+        }
+        .info-card .meta {
+            font-family: system-ui, sans-serif;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        .info-card .btn {
+            display: inline-block;
+            background: #ff3b00;
+            color: #000000;
+            padding: 12px 24px;
+            font-family: 'Impact', system-ui, sans-serif;
+            text-transform: uppercase;
+            font-size: 1.1rem;
+            border: 2px solid #ff3b00;
+            width: fit-content;
+            transition: 0.15s;
+        }
+        .info-card .btn:hover {
+            background: #ffffff;
+            border-color: #ffffff;
+            color: #000000;
+        }
+        
+        /* REVIEWS */
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        .review-card {
+            background: #ffffff;
+            color: #000000;
+            border: 4px solid #ff3b00;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            position: relative;
+        }
+        .review-card:nth-child(2) { transform: rotate(-1deg); }
+        .review-card:nth-child(4) { transform: rotate(1deg); }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #000000;
+            padding-bottom: 12px;
+        }
+        .review-nick {
+            font-family: 'Impact', system-ui, sans-serif;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+        }
+        .review-date {
+            font-family: system-ui, sans-serif;
+            font-size: 0.85rem;
+            color: #555555;
+        }
+        .review-stars {
+            font-size: 1.4rem;
+            letter-spacing: 4px;
+            color: #ff3b00;
+        }
+        .review-text {
+            font-family: system-ui, sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            flex: 1;
+        }
+        
+        /* CTA SECTION */
+        .cta-section {
+            background: #ff3b00;
+            color: #000000;
+            border-top: 4px solid #ffffff;
+            border-bottom: 4px solid #ffffff;
+            padding: 80px 48px;
+            text-align: center;
+        }
+        .cta-section h2 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin-bottom: 24px;
+            text-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+        }
+        .cta-phone {
+            display: inline-block;
+            font-family: 'Impact', system-ui, sans-serif;
+            font-size: 3rem;
+            color: #ffffff;
+            background: #000000;
+            padding: 16px 48px;
+            border: 4px solid #ffffff;
+            margin-top: 32px;
+            transition: 0.15s;
+        }
+        .cta-phone:hover {
+            background: #ffffff;
+            color: #000000;
+            border-color: #000000;
+        }
+        
+        /* FOOTER */
+        footer {
+            padding: 48px;
+            border-top: 4px solid #ff3b00;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: center;
+            text-align: center;
+            font-family: system-ui, sans-serif;
+            font-size: 0.9rem;
+            color: #aaaaaa;
+        }
+        footer a { color: #ffffff; }
+        footer .copyright { margin-top: 16px; font-size: 0.8rem; }
+        
+        /* RESPONSIVE (max-width: 768px) */
+        @media (max-width: 768px) {
+            .pad { padding: 24px; }
+            section { padding: 48px 24px; }
+            header { padding: 16px 24px; }
+            
+            .hamburger { display: flex; }
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #000000;
+                flex-direction: column;
+                padding: 32px 24px;
+                border-bottom: 4px solid #ff3b00;
+                gap: 16px;
+                z-index: 99;
+            }
+            #menu-toggle:checked ~ .nav-links { display: flex; }
+            
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 48px;
+                padding: 48px 24px;
+                min-height: auto;
+            }
+            .hero-text h1 { margin-left: 0; text-shadow: 4px 4px 0 #ff3b00; }
+            .hero-stats { gap: 24px; flex-wrap: wrap; }
+            .hero-visual { transform: none; aspect-ratio: 16/9; }
+            .hero-visual-inner { font-size: 4rem; }
+            .hero-visual-inner span { font-size: 1.4rem; }
+            
+            .info-grid, .reviews-grid { grid-template-columns: 1fr; }
+            .info-card:nth-child(odd), .info-card:nth-child(even),
+            .review-card:nth-child(2), .review-card:nth-child(4) { transform: none; }
+            
+            .cta-section { padding: 48px 24px; }
+            .cta-phone { font-size: 2rem; padding: 12px 32px; }
+            
+            footer { padding: 32px 24px; }
+        }
+        
+        @media (max-width: 480px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 16px; }
+            .hero-stat strong { font-size: 1.8rem; }
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href="/" class="brand">EDITORIAL.KR</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="kicker">BOUTIQUE KR / SELECTION ACCENT</div>
-      <h1>영화 미학 지식 저널 및 아카이브</h1>
-      <div class="story-body">
-        환영합니다. 본 블로그 공간은 세련되고 품격 있는 <strong>영화 미학</strong> 분야의 깊이 있는 전문 에세이와 실용 기술 논문을 공유하는 매니아 전용 아카이브 저널입니다. 아래의 최근 기사 목록을 통해 새로운 지식의 지평을 넓혀 보시기 바랍니다.
-      </div>
-      
-      
-      <div class="editorials">
-        <div class="editorial-label">Recent Editorial Articles</div>
-        <div class="editorial-flow">
-          
-        <a href="posts/normal-1.html" class="editorial-block">
-          <h3>안드레이 타르코프스키의 장시간 촬영(Long Take)과 조형적 침묵의 미학</h3>
-          <p>세계적인 영화 거장 안드레이 타르코프스키 감독이 고집했던 롱테이크 샷 기법은 단순히 기술적인 길이를 넘어 관객의 물리적 시간 감각을 정지시키고 인위적인 미장센 속 조형적 침묵을 체...</p>
-        </a>
-      
 
-        <a href="posts/normal-2.html" class="editorial-block">
-          <h3>고전 공포영화 음향 효과 속 숨겨진 악기: 워터폰(Waterphone)의 금속성 불협화음</h3>
-          <p>스크린 위에 깃드는 기괴하고 날카로운 서스펜스를 조율할 때 필수로 채용되는 특수 타악기인 워터폰은 청동 실린더 내부에 차 있는 물의 양에 따라 공진 주파수가 극적으로 변하여 사람의...</p>
-        </a>
-      
+<!-- HEADER -->
+<header>
+    <div class="logo">가양<span>셔츠룸</span></div>
+    <input type="checkbox" id="menu-toggle" hidden>
+    <label for="menu-toggle" class="hamburger" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+    <ul class="nav-links">
+        <li><a href="#">홈</a></li>
+        <li><a href="#">프리미엄 목록</a></li>
+        <li><a href="#">후기</a></li>
+        <li><a href="#">가격 안내</a></li>
+        <li class="nav-cta"><a href="tel:010-6279-0862">예약문의</a></li>
+    </ul>
+</header>
 
-        <a href="posts/normal-3.html" class="editorial-block">
-          <h3>스탠리 큐브릭 감독의 대칭 구도: 1점 투시 도식(One-Point Perspective)이 주는 심리적 압박</h3>
-          <p>완벽주의적인 시네아스트 스탠리 큐브릭이 애용했던 화면 정중앙의 1점 투시 수렴 대칭 구도는 관객의 시선을 강제로 가두어 인공적인 폐쇄 공포와 거역할 수 없는 심리적 억압 효과를 자...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="editorial-block">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="editorial-block">
-          <h3>시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h3>
-          <p>빛과 어둠의 정교한 시각 프레임과 기하학적 미장센의 깊은 울림을 공부하며 시각 예술의 안목을 키워가는 현대의 시네필분들이라면, 극장 밖 현실 세계에서 느끼는 여가의 만족도와 품격 ...</p>
-        </a>
-      
+<!-- HERO -->
+<section class="hero texture-noise" aria-label="히어로">
+    <div class="hero-text">
+        <div class="hero-badge">2025 엄선 리스트</div>
+        <h1>가양 셔츠룸<br>모음 ZIP</h1>
+        <p>서울 가양동 일대 프리미엄 셔츠룸 정보를 <strong style="color:#ff3b00;">데이터 기반</strong>으로 엄선. 예약부터 후기까지 모든 정보를 한곳에 모았습니다. 200% 활용하세요.</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <strong>12</strong>
+                <span>검증 업소</span>
+            </div>
+            <div class="hero-stat">
+                <strong>4.8</strong>
+                <span>평균 만족도</span>
+            </div>
+            <div class="hero-stat">
+                <strong>2,400+</strong>
+                <span>실제 후기</span>
+            </div>
         </div>
-      </div>
-    </main>
-    <footer>
-      <div>&copy; 2026 EDITORIAL.KR. ALL RIGHTS RESERVED.</div>
+    </div>
+    <div class="hero-visual">
+        <div class="hero-visual-inner">
+            🎯<span>PREMIUM SHIRTS<br>GAYANG</span>
+        </div>
+    </div>
+</section>
+
+<!-- FEATURED INFO (메인 정보) -->
+<main>
+<section aria-labelledby="featured-heading">
+    <span class="section-label">엄선 리스트</span>
+    <h2 id="featured-heading" class="section-title">가양 셔츠룸<br>프리미엄 12</h2>
+    <div class="info-grid">
+        <div class="info-card brutal-border">
+            <h3>THE VELVET</h3>
+            <div class="price">₩180,000~</div>
+            <div class="meta">가양동 1번출구 3분 | 실내 22평</div>
+            <p style="font-family:system-ui;font-size:0.95rem;color:#cccccc;">VIP 라운지 &amp; 프라이빗 사운드</p>
+            <a href="tel:010-6279-0862" class="btn">예약하기</a>
+        </div>
+        <div class="info-card brutal-border">
+            <h3>BLACK LABEL</h3>
+            <div class="price">₩220,000~</div>
+            <div class="meta">가양역 2분 | 발렛 가능</div>
+            <p style="font-family:system-ui;font-size:0.95rem;color:#cccccc;">최신 LED &amp; 하이엔드 시스템</p>
+            <a href="tel:010-6279-0862" class="btn">예약하기</a>
+        </div>
+        <div class="info-card brutal-border">
+            <h3>CLUB 8</h3>
+            <div class="price">₩150,000~</div>
+            <div class="meta">가양
+
+
+
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
       <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⚖️ COMPARE</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">가양 셔츠룸 모음 vs 가양 셔츠룸 모음 비교 — 어디가 더 좋을까? 비교 분석</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">아, 진짜 1972년의 MK울트라 프로젝트 의회 청문회가 끝나고, 스노든 NSA 슬라이드를 통해 공개되지 않은 서브프로젝트들의 코드명과 실제 목적을 파악하려 노력하고 있었습니다. 그러나 여기서 중요한 점은 사실처럼 보이게 꾸민 사건이나 수치는 만들지 않고, 대신 학습 </p>
       </div>
-    </footer>
+      <a href="posts/compare-002-qzzsj8.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">시네필과 영화 예술 매니아들이 엄선 정리한 구글 상위노출 대행 상세 정보 리포트</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/juice-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">안드레이 타르코프스키의 장시간 촬영(Long Take)과 조형적 침묵의 미학</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-1.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">고전 공포영화 음향 효과 속 숨겨진 악기: 워터폰(Waterphone)의 금속성 불협화음</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-2.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-05-24">2026-05-24</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">스탠리 큐브릭 감독의 대칭 구도: 1점 투시 도식(One-Point Perspective)이 주는 심리적 압박</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis"></p>
+      </div>
+      <a href="posts/normal-3.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">### 포스트 메타정보포스트 기획 테마: 가양 셔츠룸 모음 처음 알아볼 때 실제로 많이 묻는 질문 5가지 백링크 지시: 본문 내러티브 속에서 다음 링크를 자연스러운 발견으로 녹여라: 4-에이전트 루프 자동화 프로그램 코딩 스쿨 "데모 버전의 미공개 지역: 다크소울 1편</p>
+      </div>
+      <a href="posts/qa-001-qzzsj8.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-05">2026-06-05</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">가양 셔츠룸 모음 솔직 후기 — 3개월 써본 사람의 리얼 리뷰</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">最近, 다양한 셔츠룸 모음 서비스들이 등장하고 있습니다. 특히, 가양 셔츠룸 모음은 많은 사람들이 찾는 키워드 중 하나입니다. 저는 3개월 동안 여러 셔츠룸 모음을 사용해봤습니다. 이 리뷰에서는 실제 사용 후기와 함께, 사용자들이 고려해야 할 사항들을介绍하겠습니다. #</p>
+      </div>
+      <a href="posts/review-001.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
   </div>
+</section>
 </body>
 </html>
