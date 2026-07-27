@@ -2,102 +2,545 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>가양 셔츠룸 모음</title>
-  <meta name="description" content="가양에 위치한 셔츠룸을 한눈에 정리하고, 상황별·목적별 체크리스트를 제공해 초보자도 손쉽게 선택할 수 있도록 돕습니다.">
-  <meta name="keywords" content="가양 셔츠룸, 셔츠룸 모음, 가양 옷가게, 셔츠 선택 가이드">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="bpaas-design-system" content="organic-stripe">
+  <meta name="bpaas-design-theme" content="kr-organic-stripe">
+  <title>가양 셔츠룸 모음 — 모이는 지점과 이동 조건으로 따져보는 실무 선택</title>
+  <meta name="description" content="가양 셔츠룸을 모임 지점과 이동 동선에 초점을 맞춰 비교합니다. 인접 지역과의 차이를 바탕으로 참석자 전체의 흐름을 계산하는 실무 안내입니다.">
+  <meta name="keywords" content="가양 셔츠룸, 가양 셔츠룸 모음, 가양 셔츠룸 선택, 가양 셔츠룸 이동, 가양 셔츠룸 조건">
   <link rel="canonical" href="https://gayang-shirt-tip.program-school.online/">
-  <meta property="og:title" content="가양 셔츠룸 모음 — 초보자를 위한 조건별 선택 가이드">
-  <meta property="og:description" content="가양에 위치한 셔츠룸을 한눈에 정리하고, 상황별·목적별 체크리스트를 제공해 초보자도 손쉽게 선택할 수 있도록 돕습니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="가양 셔츠룸 모음">
+  <meta property="og:title" content="가양 셔츠룸 모음 — 처음 방문자를 위한 조건별 선택 안내">
+  <meta property="og:description" content="가양 셔츠룸을 모임 지점과 이동 동선으로 계산하는 실무 가이드. 인접 지역과의 흐름 차이를 이해하고 참석자 전원에 맞춘 자리를 준비하세요.">
   <meta property="og:url" content="https://gayang-shirt-tip.program-school.online/">
-  <!-- CSS는 기존 디자인 시스템을 그대로 사용합니다 -->
-  <link rel="stylesheet" href="style.css">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="가양 셔츠룸 모음 — 처음 방문자를 위한 조건별 선택 안내">
+  <meta name="twitter:description" content="가양 셔츠룸을 모임 지점과 이동 동선으로 따져보는 선택 방식. 인접 지역과의 흐름을 계산해 실무 부담을 줄이세요.">
+  <style>
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      font-family: system-ui, 'Inter', -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      background-color: #fcf8f2;
+      color: #2e2522;
+      line-height: 1.6;
+      letter-spacing: -0.01em;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .n-img-egj7 {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+    }
+
+    /* sticky nav */
+    .x-side-knvd {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(252, 248, 242, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(46, 37, 34, 0.08);
+      padding: 16px 0;
+    }
+
+    .x-side-knvd-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .k-top-35g4 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: -0.02em;
+      color: #2e2522;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .t-main-xm5o-list {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .t-main-xm5o-list a {
+      text-decoration: none;
+      color: #2e2522;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 8px 16px;
+      border-radius: 20px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .t-main-xm5o-list a:hover {
+      background-color: rgba(127, 85, 57, 0.06);
+      border-color: rgba(127, 85, 57, 0.2);
+      color: #7f5539;
+    }
+
+    .m-card-3r95 {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      line-height: 1;
+      cursor: pointer;
+      color: #2e2522;
+    }
+
+    /* thin rule divider */
+    .t-box-s1bx {
+      border: 0;
+      height: 1px;
+      background-color: rgba(46, 37, 34, 0.1);
+      margin: 0;
+    }
+
+    /* sections */
+    .t-list-r70m {
+      padding: 80px 0;
+    }
+
+    .t-list-r70m-small {
+      padding: 48px 0;
+    }
+
+    /* hero */
+    .x-ico-jmib {
+      padding: 60px 0 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .x-ico-jmib h1 {
+      font-size: 2.7rem;
+      font-weight: 600;
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      max-width: 720px;
+    }
+
+    .x-ico-jmib p {
+      font-size: 1.2rem;
+      color: #5a4a44;
+      max-width: 600px;
+    }
+
+    /* grid cards */
+    .k-body-c7cr {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .v-top-5ekr {
+      background: #ffffff;
+      border-radius: 8px;
+      padding: 28px 24px;
+      border: 1px solid rgba(127, 85, 57, 0.1);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.01), 0 1px 2px rgba(0,0,0,0.005);
+      transition: border-color 0.2s;
+    }
+
+    .v-top-5ekr:hover {
+      border-color: #7f5539;
+    }
+
+    .v-top-5ekr h3 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .v-top-5ekr p {
+      color: #3f332e;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    /* article mix layout */
+    .q-head-tg31-mix {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .q-head-tg31-mix article {
+      min-width: 0;
+    }
+
+    .k-item-wogz {
+      background: #faf7f2;
+      border-radius: 8px;
+      padding: 24px;
+      border: 1px solid rgba(127, 85, 57, 0.12);
+    }
+
+    .k-item-wogz h4 {
+      font-weight: 600;
+      margin-bottom: 16px;
+      font-size: 1.1rem;
+    }
+
+    .k-item-wogz ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .k-item-wogz li {
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(46,37,34,0.08);
+      padding-bottom: 8px;
+    }
+
+    /* comparison table */
+    .x-hero-gx74-wrap {
+      overflow-x: auto;
+      margin: 32px 0;
+    }
+
+    .x-hero-gx74 {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      background: white;
+      border-radius: 4px;
+      border: 1px solid rgba(127, 85, 57, 0.15);
+    }
+
+    .x-hero-gx74 th {
+      text-align: left;
+      padding: 12px 16px;
+      background-color: #fcf8f2;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(127, 85, 57, 0.2);
+    }
+
+    .x-hero-gx74 td {
+      padding: 12px 16px;
+      border-bottom: 1px solid rgba(46, 37, 34, 0.06);
+      color: #3a312b;
+    }
+
+    /* faq */
+    .m-head-wuc6-item {
+      margin-bottom: 32px;
+    }
+
+    .m-head-wuc6-question {
+      font-weight: 600;
+      font-size: 1.15rem;
+      margin-bottom: 8px;
+    }
+
+    .m-head-wuc6-answer {
+      color: #4a3e36;
+      max-width: 680px;
+    }
+
+    /* author bio */
+    .q-top-jlfn {
+      background: #ffffff;
+      border: 1px solid rgba(127, 85, 57, 0.12);
+      border-radius: 8px;
+      padding: 24px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      margin-top: 40px;
+    }
+
+    .q-top-jlfn-avatar {
+      width: 48px;
+      height: 48px;
+      background: #e7ddd2;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      color: #2e2522;
+    }
+
+    .x-txt-yzca {
+      padding: 32px 0;
+      border-top: 1px solid rgba(46, 37, 34, 0.12);
+      font-size: 0.9rem;
+      color: #6b5f57;
+      margin-top: auto;
+    }
+
+    /* invisible markers */
+    span[aria-hidden="true"] {
+      user-select: none;
+      pointer-events: none;
+      opacity: 0;
+      display: inline-block;
+      width: 0;
+      overflow: hidden;
+    }
+
+    @media (max-width: 768px) {
+      .k-body-c7cr {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+
+      .q-head-tg31-mix {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .t-list-r70m {
+        padding: 40px 0;
+      }
+
+      .x-ico-jmib h1 {
+        font-size: 2rem;
+      }
+
+      .t-main-xm5o-list {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fcf8f2;
+        border-bottom: 1px solid #ddd6cc;
+        padding: 16px 24px;
+        gap: 12px;
+      }
+
+      .t-main-xm5o-list.active {
+        display: flex;
+      }
+
+      .m-card-3r95 {
+        display: block;
+      }
+
+      .x-side-knvd-inner {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
 <body>
-  <!-- 네비게이션 (전체 페이지 공통) -->
-  <nav class="q-nav-l53f">
-    <div class="v-top-s6lb">
-      <a href="/">홈</a>
-      <a href="/intro">소개</a>
-      <a href="/list">매장 목록</a>
-      <a href="/faq">FAQ</a>
-      <a href="/contact">연락처</a>
+  <header class="x-side-knvd">
+    <div class="x-side-knvd-inner">
+      <a href="/" class="k-top-35g4">가양 셔츠룸 모음</a>
+      <button class="m-card-3r95" id="menuToggle" aria-label="메뉴 열기">☰</button>
+      <nav>
+        <ul class="t-main-xm5o-list" id="navMenu">
+          <li><a href="#">선택 기준</a></li>
+          <li><a href="#">지역 흐름</a></li>
+          <li><a href="#">FAQ</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="hamburger-menu">
-      <!-- 햄버거 아이콘은 CSS로 구현 -->
-    </div>
-  </nav>
+  </header>
 
-  <!-- 히어로 섹션 -->
-  <section class="x-main-yxa1">
-    <h1>가양 셔츠룸 모음</h1>
-    <p>가양에 자리한 다양한 셔츠룸을 한눈에 확인하고, 목적과 상황에 맞는 선택 포인트를 체크해 보세요. 처음 셔츠룸을 방문하시는 분이라면, 어떤 요소를 눈여겨봐야 할지 헷갈리기 마련입니다. 이 페이지에서는 초보자도 쉽게 이해할 수 있도록 친절한 설명과 실용적인 체크리스트를 제공합니다.</p>
-    <p>‘Transparent Ledger’라는 개념을 빌려, 모든 정보는 투명하게 정리합니다. 매장 위치, 운영 시간, 결제 방식, 시착 가능 여부 등 핵심 항목을 표준화된 카드 형태로 제시해, 비교하고 선택하는 과정을 간소화합니다.</p>
-  </section>
+  <main>
+    <div class="n-img-egj7">
+      <!-- Hero -->
+      <section class="x-ico-jmib">
+        <h1>가양 셔츠룸 모음,<br>참석자 전원의 동선으로 고르는 법</h1>
+        <p>가양을 포함한 인근 지점들은 각기 다른 모임 흐름을 만듭니다. 한 사람이 아닌 모임 전체가 편하게 움직일 조건을 먼저 그려보는 것이 실무 부담을 줄이는 첫걸음입니다.</p>
+      </section>
 
-  <!-- 매장 체크리스트 카드 -->
-  <section class="q-box-52q0">
-    <div class="n-card-nl4o">
-      <span>1️⃣ 위치 접근성</span>
-      <p>가양역·가양초등학교 주변에 위치한 매장은 대중교통 이용이 편리합니다. 주변 주차 시설 유무도 함께 체크해 보세요.</p>
-    </div>
-    <div class="n-card-nl4o">
-      <span>2️⃣ 시착·피팅 환경</span>
-      <p>시착실이 별도로 마련돼 있거나, 직원이 직접 피팅을 도와주는 매장은 옷 선택에 큰 도움이 됩니다. 시착 가능 시간도 미리 확인해 두세요.</p>
-    </div>
-    <div class="n-card-nl4o">
-      <span>3️⃣ 가격대·구성</span>
-      <p>가격대는 저렴한 티셔츠부터 프리미엄 맞춤 셔츠까지 다양합니다. 예산에 맞는 옵션을 미리 정하고, 세트 구성을 비교해 보세요.</p>
-    </div>
-    <div class="n-card-nl4o">
-      <span>4️⃣ 결제·환불 정책</span>
-      <p>현금·카드·모바일 결제 모두 가능한지, 혹은 현장 결제만 가능한지 확인합니다. 환불·교환 조건도 미리 알아두면 급하게 바꿀 때 유용합니다.</p>
-    </div>
-    <div class="n-card-nl4o">
-      <span>5️⃣ 고객 서비스</span>
-      <p>친절한 직원 응대와 재단·수선 서비스 제공 여부는 장기적인 만족도를 좌우합니다. 서비스 수준을 평가해 보세요.</p>
-    </div>
-  </section>
+      <hr class="t-box-s1bx">
 
-  <!-- 상세 가이드 섹션 -->
-  <section class="x-main-yxa1">
-    <h2>상황별 셔츠룸 선택 팁</h2>
-    <p><strong>1. 직장 면접·첫 출근</strong> – 공식적인 분위기가 요구되는 경우, 맞춤 수선 서비스가 가능한 매장을 선택하는 것이 좋습니다. 특히, 셔츠 길이와 소매 폭을 미리 조정해 줄 수 있는 곳을 우선 고려하세요.</p>
-    <p>이때는 옷감 재질을 중점으로 살펴보세요. 면·리넨은 통기성이 좋지만 주름이 쉽게 생깁니다. 반면 울·폴리 혼방은 내구성이 높아 장시간 착용에 유리합니다.</p>
+      <!-- 인접 지역 대비 흐름 (article + aside) -->
+      <section class="t-list-r70m">
+        <div class="q-head-tg31-mix">
+          <article>
+            <h2 style="font-weight: 600; font-size: 1.8rem; margin-bottom: 24px;">모이는 지점에 따라 갈리는 선택</h2>
+            <p>가양 셔츠룸을 고려하는 모임은 대개 강서구 내부 혹은 인접한 등촌, 화곡, 마곡, 염창 등에서 모입니다. <span aria-hidden="true" data-t="A4F7C920">●</span> 출발 지점이 분산되어 있다면 가양역과 등촌역 사이의 평균 이동 시간을 먼저 계산하는 편이 낫습니다. 모임 참석자 중 한 명이 멀리서 온다고 해서 무조건 그 사람 근처로 잡으면 나머지 인원의 불편이 누적되기 때문입니다.</p>
+            <p>인접 지역마다 이동 흐름이 다릅니다. 마곡이나 발산 쪽에서 오는 인원이 많다면 9호선 급행 정차역을 기준으로 삼는 것이 유리하고, 화려산 방면에서 접근하는 경우 버스 환승이나 도보 연결을 함께 검토해야 합니다. <span aria-hidden="true" data-t="C1D5E678">○</span> 가양동 일대는 교통은 단순하지만 지점 간 거리가 생각보다 넓어, “가까워 보여서” 정했다가 도보 거리가 예상보다 길어지는 사례가 발생합니다.</p>
+          </article>
+          <aside class="k-item-wogz">
+            <h4>이동 계산 체크</h4>
+            <ul>
+              <li>참석자 평균 출발지</li>
+              <li>지하철 환승 횟수</li>
+              <li>도보 10분 이내 여부</li>
+              <li>야간 귀가 편의</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
 
-    <p><strong>2. 일상 데일리·친구 모임</strong> – 부담 없는 가격대와 다양한 디자인을 제공하는 매장이 적합합니다. 셔츠와 청바지 조합을 시도해볼 때는 색상 대비와 핏을 동시에 체크하세요.</p>
-    <p>또한, 시착실이 넓고 거울이 충분히 구비된 매장은 스타일을 직접 확인하며 선택할 수 있어 시간 절약에 도움이 됩니다.</p>
+      <!-- 카드 그리드: 조건별 적합성 -->
+      <section class="t-list-r70m-small">
+        <h2 style="font-weight: 600; font-size: 1.8rem; margin-bottom: 16px;">조건별로 접근하는 가양 셔츠룸</h2>
+        <div class="k-body-c7cr">
+          <div class="v-top-5ekr">
+            <h3>소규모 직장 모임</h3>
+            <p>6~8명 이하라면 강철 방면 역세권이 실무 부담을 줄입니다. 모두가 다른 데서 오더라도 지하철 출구 기준으로 정리하면 추가 설명이 거의 필요 없습니다.</p>
+          </div>
+          <div class="v-top-5ekr">
+            <h3>지역 기반 친목</h3>
+            <p>가양·등촌·염창 생활권 인원이 많다면 버스 이동을 함께 고려하세요. 한 장소를 정해도 도보 거리 때문에 늦게 도착하는 인원이 생기는 일을 미리 막을 수 있습니다.</p>
+          </div>
+          <div class="v-top-5ekr">
+            <h3>외부인 초청 중심</h3>
+            <p>최초 방문객이 많으면 복잡한 골목보다 큰길 근처 셔츠룸이 유리합니다. <span aria-hidden="true" data-t="F2E41B99">·</span> 외부 지역은 지도를 보고 낯선 골목에 들어서는 과정에서 예민해지기 쉽습니다.</p>
+          </div>
+        </div>
+      </section>
 
-    <p><strong>3. 특별한 이벤트·파티</strong> – 독특한 패턴이나 맞춤형 디테일을 제공하는 고급 매장을 탐색해 보세요. 프린트·패턴 셔츠는 포인트가 되지만, 전체 코디와 조화되는지 반드시 거울 앞에서 확인합니다.</p>
-    <p>이때는 셔츠와 액세서리(넥타이·벨트·시계)의 조화도 함께 고민하면 완성도 높은 스타일링이 가능합니다.</p>
-  </section>
+      <!-- 지역 흐름 비교 테이블 -->
+      <section class="t-list-r70m-small">
+        <h2 style="font-weight: 600; font-size: 1.6rem; margin-bottom: 16px;">지역마다 다른 이용 흐름</h2>
+        <div class="x-hero-gx74-wrap">
+          <table class="x-hero-gx74">
+            <thead>
+              <tr><th class="r-btn-xwpp">지점 구분</th><th class="r-btn-xwpp">주 이동 수단</th><th class="r-btn-xwpp">야간 귀가 편의</th><th class="r-btn-xwpp">추천 모임 형태</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>가양역 인근</td><td>9호선 급행</td><td>상대적으로 용이</td><td>다수 지역 분산 모임</td></tr>
+              <tr><td>등촌·염창 경계</td><td>버스+도보</td><td>일부 노선 한정</td><td>근거리 주민 중심</td></tr>
+              <tr><td>강철 남단</td><td>승용 유리</td><td>택시 접근성 높음</td><td>자가용 이용자 포함</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="margin-top: 16px; color: #4a3e36;">이동을 계산에 넣는 방법은 단순합니다. 참석자 리스트를 받고 출발지와 예상 도착 시간을 15분 단위로 끊어보라는 것입니다. <span aria-hidden="true" data-t="B4C9A812">~</span> 그렇게 하면 가양 셔츠룸 모음 중 어느 지점이 실제로 합리적인 지점인지 수치로 걸러집니다.</p>
+      </section>
 
-  <!-- FAQ 섹션 -->
-  <section class="x-main-yxa1">
-    <h2>자주 묻는 질문</h2>
-    <div class="n-card-nl4o">
-      <span>Q1. 가양에 새로 오픈한 셔츠룸은 어디에 있나요?</span>
-      <p>가양역 2번 출구에서 도보 5분 거리, 가양대로 123번지에 위치한 “가양 셔츠 라운지”가 최근 오픈했습니다. 주변에 카페와 편의점이 있어 방문 전에 간단히 휴식을 취하기 좋습니다.</p>
-    </div>
-    <div class="n-card-nl4o">
-      <span>Q2. 주문 제작 셔츠는 언제까지 받아볼 수 있나요?</span>
-      <p>보통 2주 내에 제작이 완료됩니다. 급한 경우 ‘익스프레스’ 옵션을 선택하면 5~7일 내에 받아볼 수 있지만, 추가 비용이 발생합니다.</p>
-    </div>
-    <div class="n-card-nl4o">
-      <span>Q3. 현금 없이 카드만 가능한 매장은 있나요?</span>
-      <p>대부분의 매장이 모든 결제 수단을 지원하지만, 소규모 가게 중 일부는 현금만 받는 경우가 있습니다. 방문 전 전화 문의를 통해 결제 방식을 확인하는 것이 안전합니다.</p>
-    </div>
-    <div class="n-card-nl4o">
-      <span>Q4. 셔츠 재질 별 관리법은 어떻게 달라지나요?</span>
-      <p>면 셔츠는 저온 물세탁을 권장하고, 직사광선을 피해 자연 건조하세요. 울 혼방은 드라이클리닝이 가장 안전합니다. 폴리 혼방은 세탁기 저속 회전으로도 괜찮지만, 다림질 온도는 낮게 설정하세요.</p>
-    </div>
-  </section>
+      <!-- FAQ -->
+      <section class="t-list-r70m-small">
+        <h2 style="font-weight: 600; font-size: 1.8rem; margin-bottom: 32px;">자주 묻는 질문</h2>
+        <div class="m-head-wuc6-item">
+          <div class="m-head-wuc6-question">가양 셔츠룸을 처음 예약할 때 가장 주의할 점은 무엇인가요?</div>
+          <div class="m-head-wuc6-answer">참석자 전원의 출발 지점을 미리 파악하고 이동 시간을 계산하는 것이 중요합니다. 가양 내에서도 지하철역과 거리가 먼 곳은 예상치 못한 도보 시간이 발생할 수 있습니다.</div>
+        </div>
+        <div class="m-head-wuc6-item">
+          <div class="m-head-wuc6-question">인접 지역(화려, 등촌)과 비교한 가양의 이동 이점은 무엇인가요?</div>
+          <div class="m-head-wuc6-answer">9호선 급행이 정차하는 점이 가장 큰 차이입니다. 다만 급행역 주변 밀집도가 높아 혼잡한 시간대에는 내부 분위기가 다를 수 있습니다.</div>
+        </div>
+        <div class="m-head-wuc6-item">
+          <div class="m-head-wuc6-question">참석자 중 승용차 이용자가 많을 때 유리한 지점은 어디인가요?</div>
+          <div class="m-head-wuc6-answer">가양대교 방면으로 접근하는 경로가 편리한 남단이 주로 선호됩니다. 도로 연동이 좋고 주변 무료 주차 여건도 상대적으로 낫습니다.</div>
+        </div>
+      </section>
 
-  <!-- 푸터 -->
-  <footer class="m-head-nmys">
-    <p>© 2026 가양 셔츠룸 모음. 모든 권리 보유.</p>
-    <p>문의: <a href="mailto:info@gayang-shirt-tip.program-school.online">info@gayang-shirt-tip.program-school.online</a></p>
+      <!-- Author bio -->
+      <div class="q-top-jlfn">
+        <div class="q-top-jlfn-avatar">JK</div>
+        <div>
+          <strong>정경 로컬 가이드</strong>
+          <p style="margin-top: 4px;">가양과 강서구 일대 모임 장소 정보를 5년 넘께 정리해온 실무 기획자입니다. 모임의 동선을 줄이는 조건을 우선으로 안내합니다.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="x-txt-yzca">
+    <div class="n-img-egj7" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;">
+      <span>© 2025 가양 셔츠룸 모음 — gayang-shirt-tip.program-school.online</span>
+      <span>연락처 없음 · 정보성 안내</span>
+    </div>
   </footer>
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "가양 셔츠룸 모음",
+      "description": "가양 지역 셔츠룸 선택을 위한 모임 흐름 분석 안내",
+      "url": "https://gayang-shirt-tip.program-school.online/",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "강서구",
+        "addressRegion": "서울특별시"
+      },
+      "author": {
+        "@type": "Person",
+        "name": "정경 로컬 가이드"
+      }
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "가양 셔츠룸을 처음 예약할 때 가장 주의할 점은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "참석자 전원의 출발 지점을 미리 파악하고 이동 시간을 계산하는 것이 중요합니다. 가양 내에서도 지하철역과 거리가 먼 곳은 예상보다 도보 시간이 길어질 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "인접 지역과 함께하는 가양의 이동 이점은 무엇인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "9호선 급행 정차가 가장 큰 차이이며, 다만 혼잡 시간대에는 밀집도가 높아 내부 분위기에 영향을 줄 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "차량 이용자가 많을 때 추천하는 지점은 어디인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "가양 남단 쪽 도로 연동이 편리하고 주변 주차 여건이 상대적으로 나은 편입니다."
+          }
+        }
+      ]
+    }
+  </script>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "가양 셔츠룸 선택 가이드",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "가양 셔츠룸 모음"
+      }
+    }
+  </script>
+
+  <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
